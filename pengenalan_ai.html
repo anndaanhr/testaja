@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Penjelasan tentang Pengenalan Artificial Intelligence sebagai bagian dari mata kuliah Artificial Intelligence.">
+    <meta name="keywords" content="artificial intelligence, AI, pengenalan AI, pendidikan">
+    <title>Pengenalan Artificial Intelligence</title>
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --background-gradient: linear-gradient(135deg, #1e1e2f, #3b3b5b);
+            --text-color: #fff;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 40px;
+            background: var(--background-gradient);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-color);
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: pageEnter 0.8s ease-out forwards;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            animation: glow 2s infinite alternate;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .content p {
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        .back-btn {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes pageEnter {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes pageExit {
+            from {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: scale(0.9) translateY(50px);
+            }
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #fff, 0 0 10px var(--primary-color); }
+            100% { text-shadow: 0 0 15px #fff, 0 0 25px var(--secondary-color); }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            .content {
+                padding: 20px;
+            }
+            .back-btn {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pengenalan Artificial Intelligence</h1>
+        <div class="content">
+            <p>Artificial Intelligence (AI) adalah cabang ilmu komputer yang bertujuan menciptakan sistem atau mesin yang mampu meniru kecerdasan manusia. Kecerdasan ini mencakup kemampuan untuk belajar, berpikir logis, memecahkan masalah, dan berinteraksi dengan lingkungan.</p>
+            <p>Materi ini memperkenalkan konsep dasar AI, mulai dari sejarah perkembangannya sejak tahun 1950-an hingga aplikasi modern seperti asisten virtual (contoh: Siri, Google Assistant), pengenalan gambar, dan sistem rekomendasi (contoh: Netflix, Spotify).</p>
+            <p>AI memiliki berbagai pendekatan, termasuk aturan logika (rule-based systems), pembelajaran mesin (machine learning), dan jaringan saraf tiruan (neural networks). Pemahaman dasar ini menjadi fondasi untuk materi lanjutan seperti expert system dan NLP.</p>
+            <a href="pertemuan1.html" class="back-btn" onclick="exitPage(event)">Kembali ke Menu Awal</a>
+        </div>
+    </div>
+
+    <script>
+        function exitPage(event) {
+            event.preventDefault();
+            document.querySelector('.container').style.animation = 'pageExit 0.8s ease-in forwards';
+            setTimeout(() => {
+                window.location.href = 'pertemuan1.html';
+            }, 800);
+        }
+    </script>
+</body>
+</html>
